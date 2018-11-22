@@ -8,16 +8,17 @@ import sys
 
 # Complete the countingValleys function below.
 def countingValleys(n, s):
-    valley=0
-    mountain=0
+    uphill=0
+    downhill=0
     for i in s:
         if i=='U':
-            mountain+=1
-        if i=='D':
-            mountain+=-1
-        if mountain==0 and i=='U':
-            valley+=1
-    return (valley)
+            uphill+=1
+        if i =='D':
+            uphill-=1
+        if uphill==0 and i=='U':
+            downhill+=1
+    return (downhill)
+           
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
